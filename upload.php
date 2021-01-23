@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 // Maximum file size (MB)
 $max_file_siz = 20;
 
@@ -82,8 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = $messages["file Error"];
     }
 }
-var_dump($_FILES);
-echo $_SESSION["msg"] = $msg;
+
+echo $msg;
+// var_dump($_FILES);
+// echo $_SESSION["msg"] = $msg;
 
 // Back to Home
 //header("location:index.php");

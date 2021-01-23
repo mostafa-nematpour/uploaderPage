@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 
 <!-- <html lang="fa" dir="rtl"> -->
@@ -8,9 +5,10 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>
-        عنوان
+        uploader
     </title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="./assets/up-arrow.png">
+    <link href="./styles/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -18,18 +16,14 @@ session_start();
     <?php
     if (isset($_SESSION["msg"]) && $_SESSION["msg"]) : ?>
         <p><?php
-            echo $_SESSION["msg"] ;
+            echo $_SESSION["msg"];
             unset($_SESSION["msg"])
             ?></p>
     <?php endif ?>
     <br>
     <div class="main">
-
-
         <h2>File Upload & Image Preview</h2>
         <p class="lead">No Plugins <b>Just Javascript</b></p>
-
-        <!-- Upload  -->
         <form id="file-upload-form" class="uploader" action="upload.php">
             <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
 
@@ -48,10 +42,9 @@ session_start();
                     </progress>
                 </div>
             </label>
-
         </form>
     </div>
-    <script src="./script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>

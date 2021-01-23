@@ -137,7 +137,7 @@ table {
 }
 
 @font-face {
-    src: url("fonts/IRANSansWeb.woff") format("woff");
+    src: url("./fonts/Vazir-Medium.woff") format("woff");
     font-family: "site";
 }
 
