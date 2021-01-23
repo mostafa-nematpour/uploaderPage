@@ -29,13 +29,12 @@ $msg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check file availability
-  
+
 
     if (isset($_FILES["fileUpload"]) && !empty($_FILES["fileUpload"]) && $_FILES["fileUpload"]["error"] == 0) {
+        $fileArr = $_FILES["fileUpload"];
 
         $msg = "ok";
-        var_dump($fileArr);
-        $fileArr = $_FILES["fileUpload"];
         // Analyze file properties
         $fileName = $fileArr["name"];
         $fileSize = $fileArr["size"];
@@ -58,10 +57,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $destPath = $uploadFileDir . $newFileName;
 
                 // Check and execute file transfers
-                if (move_uploaded_file($fileTmpPath, $destPath)) {
-                    $msg = $messages["upload Success"];
+
+                if (is_dir($uploadFileDir)) {
+                    if (move_uploaded_file($fileTmpPath, $destPath)) {
+                        $msg = $messages["upload Success"];
+                    } else {
+                        $msg = $messages["file transfer Error"];
+                    }
                 } else {
-                    $msg = $messages["file transfer Error"];
+                    mkdir($uploadFileDir);
+                    if (move_uploaded_file($fileTmpPath, $destPath)) {
+                        $msg = $messages["upload Success"];
+                    } else {
+                        $msg = $messages["file transfer Error"];
+                    }
                 }
             } else {
                 $msg = $messages["size Error"];
@@ -71,11 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         $msg = $messages["file Error"];
-      
-
     }
 }
-var_dump($_FILES) ;
+var_dump($_FILES);
 echo $_SESSION["msg"] = $msg;
 
 // Back to Home

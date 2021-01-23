@@ -3,7 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 
-<html lang="fa" dir="rtl">
+<!-- <html lang="fa" dir="rtl"> -->
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +16,6 @@ session_start();
 
 <body>
     <?php
-    echo "5552";
     if (isset($_SESSION["msg"]) && $_SESSION["msg"]) : ?>
         <p><?php
             echo $_SESSION["msg"] ;
