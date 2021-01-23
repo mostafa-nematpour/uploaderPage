@@ -9,7 +9,7 @@ $max_file_siz = 20;
 $allowFileEX = ["jpg", "png", "jepg", "gif", "doc", "zip", "rar"];
 
 // File storage folder address
-$uploadFileDir = "upload/";
+$uploadFileDir = "uploaded/";
 
 // Set timezone for file name
 date_default_timezone_set("Asia/Tehran");
