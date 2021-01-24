@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         uploader
     </title>
@@ -23,7 +24,7 @@
     <br>
     <div class="main">
         <h2>File Upload & Image Preview</h2>
-        <p class="lead">No Plugins <b>Just Javascript</b></p>
+        <p id="file-upload-form" class="lead"> </p>
         <form id="file-upload-form" class="uploader" action="upload.php">
             <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
 
