@@ -61,7 +61,7 @@ function ekUpload() {
         );
 
         var fileType = file.type;
-        console.log(fileType);
+        //console.log(fileType);
         var imageName = file.name;
 
         var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
@@ -131,17 +131,19 @@ function ekUpload() {
                     if (xhr.readyState == 4) {
                         // Everything is good!
                         console.log(this.responseText);
+                        document.getElementById('toast').innerHTML = this.responseText;
+
                         //progress.className = (xhr.status == 200 ? "success" : "failure");
                         // document.location.reload(true);
                     }
                 };
-                console.log(file);
+                // console.log(file);
 
                 // Start upload
                 xhr.open('POST', document.getElementById('file-upload-form').action, true);
                 xhr.setRequestHeader('X-File-Name', file.name);
                 xhr.setRequestHeader('X-File-Size', file.size);
-                //  xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+
 
                 xhr.send(data);
 

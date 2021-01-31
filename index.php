@@ -24,7 +24,7 @@
     <br>
     <div class="main">
         <h2>File Upload & Image Preview</h2>
-        <p id="file-upload-form" class="lead"> </p>
+        <p id="toast" class="lead">\n</p>
         <form id="file-upload-form" class="uploader" action="upload.php">
             <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
 
